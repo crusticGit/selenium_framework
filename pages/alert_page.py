@@ -16,30 +16,30 @@ class AlertPage(BasePage):
         self.page_name = 'Alert page'
         self.unique_element = Label(browser, self.UNIQUE_ELEMENT_LOC, "Header js alerts")
         self.result_message = Label(browser, self.RESULT_MESSAGE_LOC, "Result message")
+        self.alert_element = Button(self.browser, self.BTN_ALERT_LOC, "click btn for alert")
+        self.prompt_element = Button(self.browser, self.BTN_PROMPT_LOC, "click btn for prompt")
+        self.confirm_element = Button(self.browser, self.BTN_CONFIRM_LOC, "click btn for confirm")
+        self.alert_element_for_js_click = Button(self.browser, self.BTN_ALERT_LOC, "click btn for alert")
+        self.prompt_element_for_js_click = Button(self.browser, self.BTN_PROMPT_LOC, "click btn for prompt")
+        self.confirm_element_for_js_click = Button(self.browser, self.BTN_CONFIRM_LOC, "click btn for confirm")
 
     def trigger_alert(self) -> None:
-        element = Button(self.browser, self.BTN_ALERT_LOC, "click btn for alert")
-        element.click()
+        self.alert_element.click()
 
     def trigger_prompt(self) -> None:
-        element = Button(self.browser, self.BTN_PROMPT_LOC, "click btn for prompt")
-        element.click()
+        self.prompt_element.click()
 
     def trigger_confirm(self) -> None:
-        element = Button(self.browser, self.BTN_CONFIRM_LOC, "click btn for confirm")
-        element.click()
+        self.confirm_element.click()
 
     def trigger_alert_js_click(self) -> None:
-        element = Button(self.browser, self.BTN_ALERT_LOC, "click btn for alert")
-        element.js_click()
+        self.alert_element_for_js_click.js_click()
 
     def trigger_prompt_js_click(self) -> None:
-        element = Button(self.browser, self.BTN_PROMPT_LOC, "click btn for prompt")
-        element.js_click()
+        self.prompt_element_for_js_click.js_click()
 
     def trigger_confirm_js_click(self) -> None:
-        element = Button(self.browser, self.BTN_CONFIRM_LOC, "click btn for confirm")
-        element.js_click()
+        self.confirm_element_for_js_click.js_click()
 
     def get_result_text(self) -> str:
         return self.result_message.get_text()

@@ -13,6 +13,5 @@ def test_infinity_scroll(browser: Browser, age):
 
     page.scroll_page(age)
     actual_result = page.get_count_indents()
-    expected_result = age
-    assert actual_result == expected_result, (f"Count of indents doesn't match the age. "
-                                              f"Expected:{expected_result}, actual:{actual_result}")
+    assert actual_result == age, (f"Count of indents doesn't match the age. "
+                                  f"Expected:{age}, actual:{actual_result}")

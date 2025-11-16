@@ -15,6 +15,6 @@ def test_hover_effect_for_avatar(browser):
         assert actual_result == expected_result, (f"Wrong name. Expected:{expected_result},"
                                                   f" actual:{actual_result}")
         page.click_on_profile_avatar(i)
-        assert f'/users/{i}' in browser.url, (f"Wrong url. Expected:{expected_result}, "
-                                              f"actual:{actual_result}")
-        browser.backward()
+        assert browser.url.endswith(f'/users/{i}'), (f"Wrong url. Expected:{expected_result}, "
+                                                     f"actual:{actual_result}")
+        browser.back()

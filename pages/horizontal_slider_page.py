@@ -7,7 +7,7 @@ from pages.base_page import BasePage
 
 class HorizontalSliderPage(BasePage):
     UNIQUE_ELEMENT_LOC = '//*[contains(@class, "sliderContainer")]//input'
-    SLIDER_VALUE_LOC = '//span[@id="range"]'
+    SLIDER_VALUE_LOC = 'range'
     SLIDER = UNIQUE_ELEMENT_LOC
 
     def __init__(self, browser: Browser):
@@ -27,7 +27,12 @@ class HorizontalSliderPage(BasePage):
         last_value = self.get_slider_value()
         next_value = value
         count_step = (next_value - last_value) / self.slider_step()
+        self.slider.send_keys((Keys.ARROW_LEFT if count_step < 0
+                                else Keys.ARROW_RIGHT) * int(abs(count_step)))
 
-        for i in range(int(abs(count_step))):
-            self.slider.send_keys(Keys.ARROW_LEFT) if count_step < 0 \
-                else self.slider.send_keys(Keys.ARROW_RIGHT)
+    def get_min_value_slider(self) -> float:
+        return float(self.slider.get_attribute("min"))
+
+    def get_max_value_slider(self) -> float:
+        return float(self.slider.get_attribute("max"))
+

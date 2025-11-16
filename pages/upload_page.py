@@ -4,7 +4,7 @@ from elements.input import Input
 from elements.label import Label
 from elements.web_element import WebElement
 from pages.base_page import BasePage
-from utils.pyautogui_utils import PyAutoGUIUtilities, DragDropUtilities
+from utils.pyautogui_utils import PyAutoGUIUtilities
 
 
 class UploadImage(BasePage):
@@ -43,7 +43,7 @@ class UploadImage(BasePage):
         return file_name.get_text()
 
     def open_dialog_window(self) -> None:
-        self.input_file_upload.action_chain_click()
+        self.input_file_upload.action_chains_click()
 
     def upload_file_using_dialog_window(self, file_path: str):
         self.open_dialog_window()

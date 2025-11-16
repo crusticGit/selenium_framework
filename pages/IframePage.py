@@ -53,23 +53,11 @@ class IframePage(BasePage):
         element = self.frame_btn
         element.click()
 
-    def get_parent_iframe(self) -> WebElement:
-        return self.iframe_parent
-
     def get_text_parent_iframe(self) -> str:
         return self.text_parent_iframe.get_text()
 
-    def get_child_iframe(self) -> WebElement:
-        return self.iframe_child
-
     def get_text_child_iframe(self) -> str:
         return self.text_child_iframe.get_text()
-
-    def get_iframe1(self) -> WebElement:
-        return self.iframe1
-
-    def get_iframe2(self) -> WebElement:
-        return self.iframe2
 
     def get_text_iframe1(self) -> str:
         return self.text_iframe1.get_text()

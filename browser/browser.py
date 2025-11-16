@@ -30,7 +30,7 @@ class Browser:
     def title(self) -> str:
         return self._driver.title
 
-    def backward(self) -> None:
+    def back(self) -> None:
         return self._driver.back()
 
     def forward(self) -> None:

@@ -26,8 +26,7 @@ class HandlerPage(BasePage):
         super().__init__(browser)
         self.page_name = 'handlers page'
         self.unique_element = Label(browser, self.UNIQUE_ELEMENT_LOC, 'Label opening new window')
-        self.button = Button(browser, self.BUTTON_LOC, 'button for open new window')
+        self.button_to_open_new_window = Button(browser, self.BUTTON_LOC, 'button for open new window')
 
     def click_button(self):
-        btn = self.button
-        btn.click()
+        self.button_to_open_new_window.click()

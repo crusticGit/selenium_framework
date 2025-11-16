@@ -79,7 +79,7 @@ class BaseElement:
         Logger.info(f"{self}: js click")
         self.browser.execute_script("arguments[0].click();", element)
 
-    def action_chain_click(self) -> None:
+    def action_chains_click(self) -> None:
         element = self.wait_for_presence()
         Logger.info(f"{self}: action chain click")
         actions = ActionChains(self.browser.driver)
@@ -150,6 +150,6 @@ class BaseElement:
             raise
 
     def scroll_to_element(self) -> None:
-        element = self.wait_for_presence()
+        element = self.wait_for_visible()
         Logger.info(f"{self}: js scroll to '{element}'")
         self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
