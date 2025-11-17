@@ -27,6 +27,7 @@ class Browser:
     def url(self) -> str:
         return self._driver.current_url
 
+    @property
     def title(self) -> str:
         return self._driver.title
 

@@ -27,20 +27,16 @@ class UploadImage(BasePage):
         self.uploaded_file = WebElement(browser, self.UPLOADED_FILE_NAME_LOC, 'uploaded file name')
 
     def click_on_upload(self):
-        btn = self.btn_upload
-        btn.js_click()
+        self.btn_upload.js_click()
 
     def get_result_upload_file(self) -> str:
-        element = self.result_upload
-        return element.get_text()
+        return self.result_upload.get_text()
 
     def upload_file_using_send_keys(self, file_path: str):
-        input_file_elem = self.input_file_upload
-        input_file_elem.send_keys(file_path, clear=False)
+        self.input_file_upload.send_keys(file_path, clear=False)
 
     def get_upload_file_name(self) -> str:
-        file_name = self.uploaded_file
-        return file_name.get_text()
+        return self.uploaded_file.get_text()
 
     def open_dialog_window(self) -> None:
         self.input_file_upload.action_chains_click()

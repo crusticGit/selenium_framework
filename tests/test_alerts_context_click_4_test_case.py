@@ -7,7 +7,7 @@ def test_alert_and_context_click(browser):
     browser.get(link)
     page.wait_for_open()
 
-    page.click_uniq_element()
+    page.click_menu_element()
     browser.switch_to_alert()
     actual_result = browser.get_alert_text()
     browser.accept_alert()

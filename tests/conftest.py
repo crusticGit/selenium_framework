@@ -3,7 +3,7 @@ import pytest
 from browser.browser import Browser
 from browser.browser_factory import BrowserFactory, AvailableDriverName
 from logger.logger import Logger
-from utils.pyautogui_utils import FileUtilities
+from utils.file_utils import FileUtilities
 
 
 @pytest.fixture(scope="function")

@@ -16,7 +16,7 @@ def test_handlers(browser):
     expected_result = 'New Window'
     assert actual_result == expected_result, f"Wrong text on new Page. Expected:{expected_result}, actual:{actual_result}"
 
-    actual_result = browser.title()
+    actual_result = browser.title
     expected_result = 'New Window'
     assert actual_result == expected_result, f"Wrong title in new Page. Expected:{expected_result}, actual:{actual_result}"
 
@@ -30,7 +30,7 @@ def test_handlers(browser):
     expected_result = 'New Window'
     assert actual_result == expected_result, f"Wrong text on new Page. Expected:{expected_result}, actual:{actual_result}"
 
-    actual_result = browser.title()
+    actual_result = browser.title
     expected_result = 'New Window'
     assert actual_result == expected_result, f"Wrong title in new Page. Expected:{expected_result}, actual:{actual_result}"
 

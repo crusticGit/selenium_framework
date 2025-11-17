@@ -42,16 +42,13 @@ class IframePage(BasePage):
         self.text_iframe2 = Label(browser, self.TEXT_IFRAME2_LOC, 'text frame2')
 
     def click_btn_alert_and_frame(self) -> None:
-        element = self.alert_frame_btn
-        element.click()
+        self.alert_frame_btn.click()
 
     def click_btn_nested_frame(self) -> None:
-        element = self.nested_frame_btn
-        element.click()
+        self.nested_frame_btn.click()
 
     def click_btn_frame(self) -> None:
-        element = self.frame_btn
-        element.click()
+        self.frame_btn.click()
 
     def get_text_parent_iframe(self) -> str:
         return self.text_parent_iframe.get_text()

@@ -15,5 +15,4 @@ class DynamicPage(BasePage):
         self.images = MultiWebElement(self.browser, self.IMAGE_LOC, "img element")
 
     def get_url_all_image(self) -> list:
-        urls = [img.get_attribute("src") for img in self.images]
-        return urls
+        return [img.get_attribute("src") for img in self.images]
