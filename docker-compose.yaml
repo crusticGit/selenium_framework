@@ -1,0 +1,6 @@
+services:
+  tests-framework:
+    build: .
+    container_name: selenium-tests-container
+    volumes:
+      - ./tests/test_logs_from_container:/app/logs
