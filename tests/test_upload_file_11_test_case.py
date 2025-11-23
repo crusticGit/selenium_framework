@@ -1,8 +1,11 @@
 import os.path
 
+import pytest
+
 from pages.upload_page import UploadImage
 
 
+@pytest.mark.skipif(os.path.exists('/.dockerenv'), reason='Test requires GUI, skipping in Docker')
 def test_upload_file(browser, temp_random_file):
     link = 'https://the-internet.herokuapp.com/upload'
     browser.get(link)
