@@ -1,4 +1,3 @@
-import os.path
 import platform
 from enum import StrEnum
 
@@ -21,17 +20,16 @@ class BrowserFactory:
             options: list[str] = None
     ) -> WebDriver:
         if options is None:
-            options = []
+            options = ["--window-size=1920,1080"]
 
         docker_options = []
-        if platform.system() == 'Linux' and os.path.exists('/.dockerenv'):
+        if platform.system() == 'Linux':
             docker_options = [
                 "--headless=new",
-                "--user-data-dir=/tmp/chrome-profile", #Указывает Chrome где хранить пользовательские данные
+                "--user-data-dir=/tmp/chrome-profile",  # Указывает Chrome где хранить пользовательские данные
                 "--no-sandbox",  # Без sandbox
                 "--disable-dev-shm-usage",  # Без shared memory
-                "--disable-gpu",  # Без GPU ускорения
-                "--window-size=1920,1080"
+                "--disable-gpu"  # Без GPU ускорения
             ]
         all_options = options + docker_options
 

@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y \
     && rm google-chrome-stable_current_amd64.deb \
     && rm -rf /var/lib/apt/lists/*
 
+ENV PYTHONPATH=/app
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-ENV PYTHONPATH=/app
 CMD ["pytest", "tests/", "-v", "--tb=short"]
