@@ -1,6 +1,8 @@
+import platform
 import time
 
-import pyautogui
+if platform.system() != 'Linux':
+    import pyautogui
 
 from logger.logger import Logger
 

@@ -1,3 +1,5 @@
+import time
+
 from faker import Faker
 
 from pages.alert_page import AlertPage
@@ -37,7 +39,7 @@ def test_alerts(browser):
     expected_result = 'I am a JS prompt'
     assert actual_result == expected_result, f"Wrong prompt text. Expected:{expected_result}, actual:{actual_result}"
 
-    text_from_prompt = Faker().text()
+    text_from_prompt = Faker().text(max_nb_chars=20)
     browser.send_keys_alert(text_from_prompt)
     browser.accept_alert()
     actual_result = page.get_result_text()
@@ -79,7 +81,7 @@ def test_js_alerts(browser):
     expected_result = 'I am a JS prompt'
     assert actual_result == expected_result, f"Wrong prompt text. Expected:{expected_result}, actual:{actual_result}"
 
-    text_from_prompt = Faker().text(15)
+    text_from_prompt = Faker().text(max_nb_chars=20)
     browser.send_keys_alert(text_from_prompt)
     browser.accept_alert()
     actual_result = page.get_result_text()
